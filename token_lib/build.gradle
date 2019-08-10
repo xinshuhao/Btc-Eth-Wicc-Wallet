@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.fasterxml.jackson.core:jackson-databind:2.9.0'
+    api 'com.google.guava:guava:24.0-android'
+    api 'com.google.protobuf:protobuf-java:3.5.1'
+    api 'org.slf4j:slf4j-api:1.7.22'
+    api 'com.madgag.spongycastle:core:1.58.0.0'
+    api 'com.squareup.okhttp3:okhttp:3.9.1'
+    api 'net.jcip:jcip-annotations:1.0'
+    api 'org.fusesource.leveldbjni:leveldbjni-all:1.8'
+    api "org.bouncycastle:bcprov-jdk15on:1.54"
+    api "org.slf4j:slf4j-nop:1.7.2"
+
+    testImplementation 'junit:junit:4.12'
+}
